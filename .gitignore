@@ -1,0 +1,5 @@
+# Ignore jetbrains IDE files
+*.idea
+# Ignore Glove embedding data files
+*.txt
+*.zip
