@@ -86,3 +86,13 @@ we implemented a workflow function to control the embedding methods, datasets an
 3) Test Accuracy of 75.98% for biGRU, and 77.39% for biLSTM. (Part 3.3/Part 3.3 - augmented dataset.ipynb)
 4) Test Accuracy of CNN of 72% (part3.ipynb)
 5) Final Enhancement with data augmentation with fine tuning on pretrained model with distil_roberta, achieving an accuracy of 89% (dillroberta.ipynb)
+
+- Using backtranslation, augment the training dataset translating the training samples to an Engish-like language like French to avoid losing information and translating back into English.
+- Using a word-level edit distance threshold of 5 to ensure that samples have substantial changes in the backtranslation process, and to avoid duplicating the training samples.
+Sample output:
+```
+Original: the rock is destined to be the 21st century s new conan and that he s going to make a splash even greater than arnold schwarzenegger jean claud van damme or steven segal
+Back Translated: the rock is destined to be the new conan of the 21st century and that he will cause an even more sensation than arnold schwarzenegger jean claude van damme or steven segal
+```
+
+- Combining the augmented dataset with the original dataset, we fine-tune the distil_roberta model to achieve an accuracy of 89% on the test set.
