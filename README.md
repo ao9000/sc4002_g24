@@ -14,6 +14,7 @@ Run:
 1) Part 2/simple_rnn (tensorflow).ipynb
 2) Part 2/simple_rnn_(2a2b).ipynb
 3) Part 2/simple_rnn_(2c).ipynb
+
 RNN Model Training and Evaluation <br>
 Accuracy: 75.8% <br>
 Different Strategies and respective test accuracy to deriving the final sentence representation to perform sentiment classification:
