@@ -2,6 +2,7 @@
 
 
 Download GloVe embeddings: https://nlp.stanford.edu/projects/glove/
+<br>
 Part 1: <br>
 Run Part1.ipynb <br>
 1) Size of Vocab: 16535
