@@ -9,26 +9,57 @@ nltk.download('averaged_perceptron_tagger')
 nltk.download('wordnet')
 ```
 
-Part 1: ```Run Part1.ipynb```
-Run the code in the following order to generate the embedding matrix and vocabulary mapping:
+Part 1: Generate Embedding Matrix
+Run `Part1.ipynb` in the following order to generate the embedding matrix and vocabulary mapping:
+
 1. Load Rotten Tomatoes Dataset
-Sample output
-1. Build Vocabulary
-   1. Output: Size of Vocab: ```16535```
-1. Load GloVe Embeddings
-1. Create Embedding Matrix
-    1. Output: Size of OOV words: 604
-1. Handle OOV Words
-   1. Stemming
+Uses the `datasets` library to load movie reviews for sentiment analysis:
+from datasets import load_dataset
+dataset = load_dataset('rotten_tomatoes')
+
+2. Build Vocabulary
+Processes training data to create vocabulary through:
+- Case folding (lowercase)
+- NLTK tokenization
+- Special character handling
+- Hyphenated word splitting
+Output: Size of Vocab: ```16535```
+
+3. Load GloVe Embeddings
+4. Create Embedding Matrix
+Maps each vocabulary word to its GloVe embedding vector, identifying words missing from GloVe (OOV words).
+Output: Size of OOV words: 604
+
+Output of mapping:
+```
+{'determination': 0,
+ 'simple': 1,
+ 'taking': 2,...}
+```
+Output of embedding matrix:
+```
+array([[ 0.25093  ,  0.83451  ,  0.25677  , ...,  0.31425  , -0.24449  ,
+        -0.0023992],
+       [ 0.57959  ,  0.14576  ,  0.32607  , ...,  0.050995 , -0.24176  ,
+        -0.1596   ],
+       [-0.049447 ,  0.14972  , -0.2371   , ..., -0.11361  ,  0.048788 ,
+        -0.19525  ],
+       ...,]])
+```
+
+5. Handle OOV Words
+Implements multiple strategies to handle Out-of-Vocabulary words:
+   1. Stemming: Uses Lancaster Stemmer to match word variants
       1. Output: ```OOV word: abandone, substitute word: abandonar```
-   1. WordNet Synonyms
+   1. WordNet Synonyms: Finds semantically similar words using WordNet based on POS from training set
+   - Utilizes WordNet's synonym database
       1. Output: ```OOV word: juiceless, synonym: dry```
-   1. Edit Distance
+   1. Edit Distance: Catches misspellings using Levenshtein distance
       1. Output: ```OOV word: bizzarre, substitute word: bizarre, Distance: 1```
-   1. Subword Embeddings
+   1. Subword Embeddings: Splits and averages embeddings for compound words
       1. Output: ```OOV word: cipherlike, subwords: ('cipher', 'like')```
-   1. Unknown Token
-1. Save Embedding Matrix and Vocabulary Mapping
+   1. Unknown Token : Assigns random embeddings to remaining OOV words
+6. Save Embedding Matrix and Vocabulary Mapping
 
 Part 2: <br>
 Run: 
