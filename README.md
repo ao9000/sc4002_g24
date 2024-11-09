@@ -25,6 +25,9 @@ Different Strategies and respective test accuracy to deriving the final sentence
 
 
 Part 3:
+
+For part 3.1, 3.2 and 3.4, we implemented a workflow function to control the embedding methods, datasets and models used in each training along with a dictionary variable called params to pass the respective hyper parameters. To change the model used, can take a look into the code definition and choose the corresponding string as the input for model_type parameter. To use the OOV handling solution discussed in part 1, pass True to handle_oov parameter. Pass False to disable it. The output should indicate the average training loss and validation loss for each epoch, followed by an accuracy obtained from the test set.
+
 1) Test Accuracy with updated word embeddings: 73% (part3.ipynb)
 2) test Accuracy when dealing with OOV words: 73% (part3.ipynb)
 3) Test Accuracy of 75.98% for biGRU, and 77.39% for biLSTM. (Part 3.3/Part 3.3 - augmented dataset.ipynb)
