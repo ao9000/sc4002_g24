@@ -1,13 +1,34 @@
-# sc4002_g24
-
-
+# Prerequisites
 Download GloVe embeddings: https://nlp.stanford.edu/projects/glove/
-<br>
-Part 1: <br>
-Run Part1.ipynb <br>
-1) Size of Vocab: 16535
-2) Size of OOV words: 604
-3) Multi-pass strategy: Stemming, Synonym Substitution, Edit distance matching, Subword Decomposition, <UNK> Token
+
+Required NLTk packages:
+```
+import nltk
+nltk.download('punkt')
+nltk.download('averaged_perceptron_tagger')
+nltk.download('wordnet')
+```
+
+Part 1: ```Run Part1.ipynb```
+Run the code in the following order to generate the embedding matrix and vocabulary mapping:
+1. Load Rotten Tomatoes Dataset
+Sample output
+1. Build Vocabulary
+   1. Output: Size of Vocab: ```16535```
+1. Load GloVe Embeddings
+1. Create Embedding Matrix
+    1. Output: Size of OOV words: 604
+1. Handle OOV Words
+   1. Stemming
+      1. Output: ```OOV word: abandone, substitute word: abandonar```
+   1. WordNet Synonyms
+      1. Output: ```OOV word: juiceless, synonym: dry```
+   1. Edit Distance
+      1. Output: ```OOV word: bizzarre, substitute word: bizarre, Distance: 1```
+   1. Subword Embeddings
+      1. Output: ```OOV word: cipherlike, subwords: ('cipher', 'like')```
+   1. Unknown Token
+1. Save Embedding Matrix and Vocabulary Mapping
 
 Part 2: <br>
 Run: 
