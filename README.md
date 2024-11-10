@@ -63,18 +63,23 @@ Implements multiple strategies to handle Out-of-Vocabulary words:
 
 Part 2: <br>
 Run: 
-1) Part 2/simple_rnn (tensorflow).ipynb
-2) Part 2/simple_rnn_(2a2b).ipynb
-3) Part 2/simple_rnn_(2c).ipynb
+1) Part 2/simple_rnn_(2a2b).ipynb
+2) Part 2/simple_rnn_(2c).ipynb
 
-RNN Model Training and Evaluation <br>
+Vanilla RNN Model Training and Evaluation <br>
+Run `simple_rnn(2a2b)` to see the output of the best model. The best model had the following parameters:
+ 1. Learning Rate = 0.0001
+ 2. Batch Size =  128
+ 3. Optimiser  = Adam
+ 4. Epochs (with Early Stopping)**  = 28
 Accuracy: 75.8% <br>
-Different Strategies and respective test accuracy to deriving the final sentence representation to perform sentiment classification:
-1) Max Pooling: 74.86%
-2) Mean Polling: 74.11%
-3) Concantenation Pooling: 75.05%
-4) Attention Layer: 74.95%
 
+We implemented the following strategies to derive the final sentence representation to perform sentiment classification:
+Run `simple_rnn(2c)` with the datasets cells first and then run each section separately.
+ 1.  Max Pooling: 74.86%
+ 2.  Mean Polling: 74.11%
+ 3.  Concantenation Pooling: 75.05% (This uses a concatenated method between last hidden representation, max and mean pooling)
+ 4.  Attention Layer: 74.95%
 
 Part 3:
 
