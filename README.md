@@ -78,14 +78,17 @@ Different Strategies and respective test accuracy to deriving the final sentence
 
 Part 3:
 
-run ```part3.ipynb``` for part 3.1, 3.2 and 3.4.
+Run ```part3.ipynb``` for part 3.1, 3.2 and 3.4.
 we implemented a workflow function to control the embedding methods, datasets and models used in each training along with a dictionary variable called params to pass the respective hyper parameters. To change the model used, can take a look into the code definition and choose the corresponding string as the input for model_type parameter. To use the OOV handling solution discussed in part 1, pass True to handle_oov parameter. Pass False to disable it. The output should indicate the average training loss and validation loss for each epoch, followed by an accuracy obtained from the test set.
+
+Run Part 3.3/Part 3.3 - original dataset.ipynb to train / evaluate biGRU and biLSTM models on original dataset. Run Part 3.3/Part 3.3 - augmented dataset.ipynb to train / evaluate biGRU and biLSTM models on original dataset. Part 3.3 contains subdirectories with the presaved best checkpoints from training, which can be used for evaluation to obtain test accuracy without training the models again. Simply open the relevant notebook and click 'Run All' as the training code has been commented. Please uncomment the training code if you wish to train the models again.
 
 1) Test Accuracy with updated word embeddings: 73% (part3.ipynb)
 2) test Accuracy when dealing with OOV words: 73% (part3.ipynb)
-3) Test Accuracy of 75.98% for biGRU, and 77.39% for biLSTM. (Part 3.3/Part 3.3 - augmented dataset.ipynb)
-4) Test Accuracy of CNN of 72% (part3.ipynb)
-5) Final Enhancement with data augmentation with fine tuning on pretrained model with distil_roberta, achieving an accuracy of 89% (dillroberta.ipynb)
+3) Test Accuracy of 75.98% for biGRU, and 77.39% for biLSTM on original dataset. (Part 3.3/Part 3.3 - original dataset.ipynb)
+4) Test Accuracy of 77.86% for biGRU, and 76.92% for biLSTM on augmented dataset. (Part 3.3/Part 3.3 - augmented dataset.ipynb)
+5) Test Accuracy of CNN of 72% (part3.ipynb)
+6) Final Enhancement with data augmentation with fine tuning on pretrained model with distil_roberta, achieving an accuracy of 89% (dillroberta.ipynb)
 
 - Using backtranslation, augment the training dataset translating the training samples to an Engish-like language like French to avoid losing information and translating back into English.
 - Using a word-level edit distance threshold of 5 to ensure that samples have substantial changes in the backtranslation process, and to avoid duplicating the training samples.
