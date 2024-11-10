@@ -78,7 +78,7 @@ We implemented the following strategies to derive the final sentence representat
 Run `simple_rnn(2c)` with the datasets cells first and then run each section separately.
  1.  Max Pooling: 74.86%
  2.  Mean Pooling: 74.11%
- 3.  Concantenation Pooling: 75.05% (This uses a concatenated method between last hidden representation, max and mean pooling)
+ 3.  Concatenation Pooling: 75.05% (This uses a concatenated method between last hidden representation, max and mean pooling)
  4.  Attention Layer: 74.95%
 
 Part 3:
