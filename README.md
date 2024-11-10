@@ -77,7 +77,7 @@ Accuracy: 75.8% <br>
 We implemented the following strategies to derive the final sentence representation to perform sentiment classification:
 Run `simple_rnn(2c)` with the datasets cells first and then run each section separately.
  1.  Max Pooling: 74.86%
- 2.  Mean Polling: 74.11%
+ 2.  Mean Pooling: 74.11%
  3.  Concantenation Pooling: 75.05% (This uses a concatenated method between last hidden representation, max and mean pooling)
  4.  Attention Layer: 74.95%
 
@@ -103,4 +103,4 @@ Original: the rock is destined to be the 21st century s new conan and that he s 
 Back Translated: the rock is destined to be the new conan of the 21st century and that he will cause an even more sensation than arnold schwarzenegger jean claude van damme or steven segal
 ```
 
-- Combining the augmented dataset with the original dataset, we fine-tune the distil_roberta model to achieve an accuracy of 89% on the test set.
+- Combining the augmented dataset with the original dataset, we fine-tuned the distil_roberta model to achieve an accuracy of 89% on the test set.
